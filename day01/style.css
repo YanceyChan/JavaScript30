@@ -2,7 +2,7 @@ html {
   /* rem是以html中的font-size为参照物 */
   font-size: 10px; 
   background: url(./backgroudImage.jpg) bottom center;
-  background-size: cover;
+  background-size: cover; 
 }
 body,
 html {
@@ -12,7 +12,7 @@ html {
 }
 
 .keys {
-  display: flex;
+  display: flex; /*弹性布局*/ 
   flex: 1; 
   min-height: 100vh; 
   align-items: center;  
