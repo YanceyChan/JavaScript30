@@ -1,5 +1,3 @@
-// import {f} from './test';
-
 function removeTransition(e) {
     if (e.propertyName !== 'transform') {
         return;
