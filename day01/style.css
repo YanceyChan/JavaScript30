@@ -20,6 +20,7 @@ html {
 }
 
 .key {
+  /* 这里的key元素为什么会平均分布而且会自动放大缩小适应屏幕？？？？ */
   border: .4rem solid black;
   border-radius: .5rem;
   margin: 1rem;
