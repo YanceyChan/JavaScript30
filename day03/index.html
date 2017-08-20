@@ -29,6 +29,7 @@
       <img src="http://f.hiphotos.baidu.com/lvpics/h=800/sign=b346032cbe389b5027ffed52b534e5f1/960a304e251f95ca545f8b84ce177f3e6709525d.jpg">
     
       <style>
+          /* :root 选择器匹配文档根元素。在 HTML 中，根元素始终是 html 元素。 */
          :root {
           --base: #ffc600;
           --spacing: 10px;
@@ -81,15 +82,21 @@
       </style>
     
       <script>
+        //   选择.controls class下的所有input标签
         const inputs = document.querySelectorAll('.controls input');
     
         function handleUpdate() {
+            // data-sizing属性，无则为‘’
           const suffix = this.dataset.sizing || '';
+            //   documentElement 是整个节点树的根节点root，即<html> 标签
+            // 修改：root 里面的属性，需要设置px值的设置px值。
           document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+            // 获取label_xxx的元素，修改innerText为对应的值
           document.getElementById(`label_${this.name}`).innerText = this.value + suffix;
         }
-    
+        // 监听input标签change事件
         inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        // 监听input标签mousemove事件
         inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
       </script>
 </body>
