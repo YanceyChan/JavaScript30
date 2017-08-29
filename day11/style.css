@@ -73,10 +73,12 @@ body {
   background:rgba(0,0,0,0.1);
 }
 
+/* :hover 选择器用于选择鼠标指针浮动在上面的元素 */
 .player:hover .player__controls {
   transform: translateY(0);
 }
 
+/* :hover 选择器用于选择鼠标指针浮动在上面的元素 */
 .player:hover .progress {
   height:15px;
 }
@@ -105,6 +107,7 @@ body {
 
 /* unholy css to style input type="range" */
 
+/* 去除input样式 */
 input[type=range] {
   -webkit-appearance: none;
   background:transparent;
