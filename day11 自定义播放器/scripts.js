@@ -25,10 +25,13 @@ function handleToggle(){
 }
 
 function handlePlayerSlider(e){
+    //video[e.target.name] 等价于 video.(e.target.name属性)（volume 或playbackRate 播放速率） 
     video[e.target.name] = e.target.value;
 }
 
 function handleSkip(e){
+    //parseFloat 函数可解析一个字符串,并返回一个浮点数
+    //this.dataset.skip = -10/25
     let skiptime = parseFloat(this.dataset.skip);
     video.currentTime += skiptime;
 }
@@ -38,8 +41,11 @@ function handleprogressBar(e){
     // let pice = (e.offsetX / progress.clientWidth) * video.duration;
     video.currentTime = pice;
 }
+
+// 根据播放进度，调整播放进度条长度
 function progressBarUpdate(){
     let portion = parseFloat(video.currentTime / video.duration) * 100;
+    //flex-basis 属性用于设置或检索弹性盒伸缩基准值
     progressBar.style.flexBasis = `${portion}%`;
 }
 

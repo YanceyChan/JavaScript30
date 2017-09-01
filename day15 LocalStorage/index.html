@@ -62,6 +62,7 @@
     // };
     const addItems = document.querySelector('.add-items');
     const itemsList = document.querySelector('.plates');
+    //localStorage 存储的是字符串，要转换为json格式
     const items = JSON.parse(localStorage.getItem('items')) || [];
 
     function addItem(e) {
@@ -88,9 +89,10 @@
       }).join(''); // join()之后一定要加''，表示空字符，否则会加入逗号，造成错误  
     }
 
+    // 修改选择item 标志
     function toggleDone(e) {
       // if(!e.target.nodeName.match('INPUT')) return;
-      if (!e.target.matches('input')) return; // 跳过所有的input，只处理label
+      if (!e.target.matches('input')) return; // 只处理input
       const node = e.target;
       const index = node.dataset.index;
       items[index].done = !items[index].done;
