@@ -38,16 +38,19 @@
     const walk = 100; // 鼠标左右移动共移动的距离
 
     function draw(e) {
+      //获取到hero的宽高，并赋值给width、height
       const {
         offsetWidth: width,
         offsetHeight: height
       } = hero;
+      // 将e里面的offsetX和offsetY的值 赋给x,y。
       let {
         offsetX: x,
         offsetY: y
       } = e;
 
       // 使鼠标移动到中间元素上，x、y的值连续变化
+      // 此时x，y为h1元素里面的xy值,加上h1元素的offestLeft和offsetTop，就等于hero里面的x，y
       if (e.target !== this) {
         // if(e.target == text){
         x = x + e.target.offsetLeft;
@@ -55,6 +58,8 @@
       }
       // const xaisx = (x/width*walk)-(walk/2);
       // const yaisx = (y/height*walk)-(walk/2);
+
+      // 取值xaisx范围（ walk/2 ~ -walk/2)
       const xaisx = Math.floor((x / width * walk) - (walk / 2));
       const yaisx = Math.floor((y / height * walk) - (walk / 2));
       text.style.textShadow =
